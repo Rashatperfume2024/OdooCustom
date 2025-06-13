@@ -1,0 +1,322 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rashatperfume_custom_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241207\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-17 17:44+0000\n"
+"PO-Revision-Date: 2024-12-17 20:45+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : "
+"n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: rashatperfume_custom_report
+#: model:ir.actions.report,print_report_name:rashatperfume_custom_report.action_wm_report_payment_receipt
+msgid ""
+"'%s - %s' % ('Payment' if object.payment_type == 'outbound' else "
+"'Receipt' ,object.name or 'Voucher')"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "1.05"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "27.00"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "4.05"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    السعر الاجمالي\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Total Price\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    الضرائب\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Taxes\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    الكمية\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Quantity\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    المستند المصدر\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Source Document\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    الوصف\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Description\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    خصم %\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Disc.%\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    سعر الوحدة\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Unit price\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    قيمة الضريبة\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    VAT Amount\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<span>\n"
+"                                    مبلغ\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <span>\n"
+"                                    Amount\n"
+"                                </span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "<span>on</span>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong class=\"mr16\" style=\"display: inline-block\">Subtotal/الإجمالي "
+"الفرعي\n"
+"                                        </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">\n"
+"                                Customer Code:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">:\n"
+"                                المصدر\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">:\n"
+"                                تاريخ الاستحقاق\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">:\n"
+"                                تاريخ التوصيل\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">:\n"
+"                                تاريخ الفاتورة\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">:\n"
+"                                رقم الإشارة\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">:\n"
+"                                كود العميل\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">Delivery "
+"Date:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">Due Date:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">Invoice "
+"Date:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">Reference:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong style=\"white-space:nowrap;color:black !important;\">Source:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong>\n"
+"                                                        Amount Due\n"
+"                                                        /\n"
+"                                                        المبلغ المستحق\n"
+"                                                    </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong>\n"
+"                                            Subtotal\n"
+"                                            /\n"
+"                                            الإجمالي الفرعي\n"
+"                                        </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"<strong>\n"
+"                                            Total\n"
+"                                            /\n"
+"                                            المجموع\n"
+"                                        </strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "<strong>Shipping Address</strong>"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.report_saleorder_document
+msgid "Barcode"
+msgstr "الباركود"
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "Paid on/دفعت في"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model:ir.actions.report,name:rashatperfume_custom_report.action_wm_report_payment_receipt
+msgid "Receipt"
+msgstr "سند الصرف / القبض"
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid ""
+"Tax\n"
+"                                                        15%"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "Tax 15%"
+msgstr ""
+
+#. module: rashatperfume_custom_report
+#: model_terms:ir.ui.view,arch_db:rashatperfume_custom_report.arabic_english_invoice
+msgid "Tax ID"
+msgstr ""

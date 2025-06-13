@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_wm_payment_receipt_document">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context(lang=lang)"/>
+            <t t-set="values" t-value="o._get_payment_receipt_report_values()"/>
+            <div dir="ltr" calss="mt128">
+                <div class="row" style="font-family:Tajawal;line-height:1 !important;color:black !important">
+                    <div class="col-12 text-center"
+                                 style="line-height:1 !important;font-weight: bold;font-size: 14px;">
+                        <h3 t-translation="off" t-if="o.payment_type == 'inbound'"><strong>Receipt Voucher / سند قبض
+                        </strong></h3>
+                        <h3 t-translation="off"
+                              t-if="o.payment_type == 'outbound'"><strong>Payment Voucher / سند صرف
+                        </strong></h3>
+
+                    </div>
+                </div>
+                <div dir="ltr" id="informations" style="color:black !important" class="row mt32 pt-3">
+                    <div dir="ltr" class="col-6">
+                        <div>
+                            <div style="width:25%; display:inline-block; text-align: left;">
+                                <span t-translation="off">No.</span>
+                            </div>
+                            <div style="width:40%; display:inline-block; text-align: center;">
+                                <strong>
+                                    <span style="color:black !important" t-field="o.name"></span>
+                                </strong>
+                            </div>
+                            <div style="width:30%; display:inline-block; text-align: right;">
+                                <span t-translation="off">الرقم</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="width:25%; display:inline-block; text-align: left;">
+                                <span t-translation="off">Date</span>
+                            </div>
+                            <div style="width:40%; display:inline-block; text-align: center;">
+                                <strong>
+                                    <span style="color:black !important" t-field="o.date"></span>
+                                </strong>
+                            </div>
+                            <div style="width:30%; display:inline-block; text-align: right;">
+                                <span t-translation="off">التاريخ</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-2">
+                    </div>
+                    <div dir="ltr" class="col-4" style="font-family:Tajawal;">
+                        <div style="width:30%; display:inline-block; text-align: left; max-height:25pt;">
+                            <span t-translation="off">Amount</span>
+                        </div>
+                        <div style="width:33%; display:inline-block; text-align: center;color:black !important;">
+                            <strong>
+                                <span style="color:black !important" t-if="o.payment_type in ('inbound','outbound')" t-field="o.amount"
+                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}">
+                                </span>
+                            </strong>
+                        </div>
+                        <div style="width:33%; display:inline-block; text-align: right;">
+                            <span t-translation="off">
+                                المبلغ</span>
+                        </div>
+
+                    </div>
+                </div>
+                <style>
+                    .payment-section
+                    {
+                        border: 2px solid !important;
+                        border-radius: 0.75rem !important;
+                        padding: 8px 0.5rem !important;
+                    }
+                </style>
+                <div class="payment-section mt-3" style="color:black !important;">
+                    <div dir="ltr" class="row" style="font-size:18px; text-align: left;font-family:Tajawal">
+                        <div style="text-align: left;font-family:Tajawal" class="col-4">
+                            <span t-translation="off" t-if="o.payment_type == 'inbound'">We received from</span>
+                            <span t-translation="off" t-if="o.payment_type == 'outbound'">We paid to</span>
+                        </div>
+                        <div class="col-4" style="text-align: center;font-family:Tajawal">
+                            <strong>
+                                <span t-field="o.partner_id"/>
+                            </strong>
+                        </div>
+                        <div style="text-align: right;font-family:Tajawal" class="col-4">
+                            <span t-translation="off" t-if="o.payment_type == 'inbound'">استلمنا من</span>
+                            <span t-translation="off" t-if="o.payment_type == 'outbound'">صرفنا لـ</span>
+                        </div>
+                    </div>
+                    <div dir="ltr" class="row" style="font-size:18px; text-align: left;font-family:Tajawal">
+                        <div style="text-align: left;font-family:Tajawal" class="col-3">
+                            <span t-translation="off">Amount</span>
+                        </div>
+                        <div class="col-6" style="text-align: center;font-family:Tajawal">
+                            <strong>
+                                <t t-set="o_sec" t-value="o.with_context(lang=o.env['res.lang']._get_code('ar_001'))"/>
+                                <span t-esc="o_sec.currency_id.amount_to_text(o.amount)"/>
+                            </strong>
+                        </div>
+                        <div style="text-align: right;font-family:Tajawal" class="col-3">
+                            <span t-translation="off">مبلغ وقدره</span>
+                        </div>
+                    </div>
+                    <div dir="ltr" class="row" style="font-size:18px; text-align: left;font-family:Tajawal">
+                        <div style="text-align: left;font-family:Tajawal" class="col-4">
+                            <span t-translation="off">Paid through</span>
+                        </div>
+                        <div class="col-4" style="text-align: center;font-family:Tajawal">
+                            <strong>
+                                <span t-esc="o.journal_id.name"/>
+                            </strong>
+                        </div>
+                        <div style="text-align: right;font-family:Tajawal" class="col-4">
+                            <span t-translation="off">تم الدفع من خلال</span>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size:18px; text-align: left;font-family:Tajawal">
+                        <div style="text-align: left;font-family:Tajawal" class="col-4">
+                            <span t-translation="off">Memo</span>
+                        </div>
+                        <div class="col-4" style="text-align: center;font-family:Tajawal">
+                            <strong>
+                                <span t-esc="o.memo"/>
+                            </strong>
+                        </div>
+                        <div style="text-align: right;font-family:Tajawal" class="col-4">
+                            <span t-translation="off">البيان</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure"></div>
+            <div class="row mt32 avoid-page-break-inside"
+                 style="font-family:Tajawal;color:black !important; text-align: center;" dir="rtl">
+                <div class="col-4"><strong t-translation="off">المستلم</strong></div>
+                <div class="col-4"><strong t-translation="off">المحاسب</strong></div>
+                <div class="col-4"><strong t-translation="off">المدير</strong></div>
+            </div>
+             <div class="row avoid-page-break-inside"
+                 style="font-family:Tajawal;color:black !important; text-align: center;" dir="rtl">
+                <div class="col-4"><strong t-translation="off">Receiver</strong></div>
+                <div class="col-4"><strong t-translation="off">Accountant</strong></div>
+                <div class="col-4"><strong t-translation="off">Manager</strong></div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_wm_payment_receipt">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="ar_001"/>
+                <t t-call="rashatperfume_custom_report.report_wm_payment_receipt_document" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_wm_report_payment_receipt" model="ir.actions.report">
+        <field name="name">Receipt</field>
+        <field name="model">account.payment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rashatperfume_custom_report.report_wm_payment_receipt</field>
+        <field name="report_file">rashatperfume_custom_report.report_wm_payment_receipt</field>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+         <field name="print_report_name">'%s - %s' % ('Payment' if object.payment_type == 'outbound' else 'Receipt' ,object.name or 'Voucher')</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

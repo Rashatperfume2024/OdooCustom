@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_salary_attachment_view_tree" model="ir.ui.view">
+            <field name="name">hr.salary.attachment.tree</field>
+            <field name="model">hr.salary.attachment</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_attachment_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="attachment_journal_id" optional="hide"/>
+                    <field name="debit_account_id" optional="hide"/>
+                    <field name="credit_account_id" optional="hide"/>
+                    <field name="account_move_id" optional="show"/>
+                    <field name="account_move_state" widget="badge" decoration-success="account_move_state == 'posted'"
+                           decoration-info="account_move_state == 'draft'" optional="show"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="hr_salary_attachment_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.salary.attachment.form.inherit</field>
+            <field name="model">hr.salary.attachment</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_attachment_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <field name="account_move_id" invisible="1"/>
+                    <field name="create_journal_entry" invisible="1"/>
+                    <field name="credit_account_id" invisible="1"/>
+
+                    <button name="button_open_journal_entry" type="object" class="oe_stat_button" icon="fa-bars"
+                            invisible="not account_move_id">
+                        <field name="account_move_state" invisible="1"/>
+                        <div class="o_stat_info">
+                            <span invisible="account_move_state == 'posted'" class="o_stat_text">Draft Journal Entry
+                            </span>
+                            <span invisible="account_move_state == 'draft'" class="o_stat_text">Journal Entry</span>
+                        </div>
+                    </button>
+                </xpath>
+                <field name="is_refund" position="after">
+                    <filed name="create_journal_entry" invisible="1"/>
+                    <field name="attachment_journal_id" options="{'no_create': True, 'no_create_edit':True}"
+                           readonly="True" force_save="1"
+                           invisible="not attachment_journal_id or not create_journal_entry"/>
+                    <field name="debit_account_id" options="{'no_create': True, 'no_create_edit':True}"
+                           readonly="True" force_save="1" invisible="not debit_account_id or not create_journal_entry"/>
+                    <field name="credit_account_id" options="{'no_create': True, 'no_create_edit':True}"
+                           readonly="account_move_id" force_save="1"
+                           invisible="not credit_account_id or not create_journal_entry"/>
+                </field>
+                <button name="action_cancel" position="after">
+                    <button name="action_create_draft_journal" type="object" string="Create Draft Entry"
+                            class="oe_highlight" confirm="Are you sure you want to proceed?"
+                            invisible="account_move_id or not credit_account_id or not debit_account_id or not attachment_journal_id or not credit_account_id  or state in ('close','cancel') or employee_count &gt; 1"/>
+                </button>
+
+            </field>
+        </record>
+
+        <record id="model_salary_attachment_action_create_entry" model="ir.actions.server">
+            <field name="name">Create Draft Entry</field>
+            <field name="model_id" ref="hr_payroll.model_hr_salary_attachment"/>
+            <field name="binding_model_id" ref="hr_payroll.model_hr_salary_attachment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                records.action_create_draft_journal()
+            </field>
+
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+
+        <record id="hr_contract_view_form_analytic_distribution" model="ir.ui.view">
+            <field name="name">hr.contract.view.form.inherit.analytic.distribution</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_payroll_account.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='analytic_account_id']" position="after">
+                    <field name="analytic_distribution" widget="analytic_distribution"
+                           groups="analytic.group_analytic_accounting"/>
+                </xpath>
+                <xpath expr="//field[@name='analytic_account_id']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
+

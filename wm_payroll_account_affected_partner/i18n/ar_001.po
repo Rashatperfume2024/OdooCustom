@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wm_payroll_account_affected_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-24 19:29+0000\n"
+"PO-Revision-Date: 2025-02-24 22:30+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : "
+"n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: wm_payroll_account_affected_partner
+#: model:ir.model.fields,field_description:wm_payroll_account_affected_partner.field_hr_salary_rule__show_affected_partner
+msgid "Add Partner to Journal Item"
+msgstr "إضافة شريك إلى عنصر اليومية"
+
+#. module: wm_payroll_account_affected_partner
+#: model:ir.model,name:wm_payroll_account_affected_partner.model_hr_payslip
+msgid "Pay Slip"
+msgstr "قسيمة المرتب"
+
+#. module: wm_payroll_account_affected_partner
+#: model:ir.model,name:wm_payroll_account_affected_partner.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "قاعدة الراتب"
+
+#. module: wm_payroll_account_affected_partner
+#. odoo-python
+#: code:addons/wm_payroll_account_affected_partner/models/hr_payroll_account.py:0
+msgid ""
+"There is no work contact (partner) linked to employee (%s), please link it "
+"to a partner!"
+msgstr "لا توجد جهة اتصال عمل (شريك) مرتبطة بالموظف (%s)، يرجى ربطه بشريك!"

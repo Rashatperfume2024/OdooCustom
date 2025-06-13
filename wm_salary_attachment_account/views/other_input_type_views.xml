@@ -1,0 +1,38 @@
+<!-- Copyright 2020 CorTex IT Solutions Ltd. (<https://cortexsolutions.net/>)-->
+<!-- License OPL-1-->
+
+<odoo>
+    <data>
+        <record id="hr_payslip_input_type_view_tree" model="ir.ui.view">
+            <field name="name">hr.payslip.input.type.tree.inherit.</field>
+            <field name="model">hr.payslip.input.type</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_input_type_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="create_journal_entry" optional="hide"/>
+                    <field name="attachment_journal_id" optional="hide"/>
+                    <field name="debit_account_id" optional="hide"/>
+                    <field name="credit_account_id" optional="hide"/>
+
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_payslip_input_type_view_form" model="ir.ui.view">
+            <field name="name">hr.payslip.input.type.form.inherit.l10n_au_hr_payroll</field>
+            <field name="model">hr.payslip.input.type</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_input_type_view_form"/>
+            <field name="arch" type="xml">
+                <field name="struct_ids" position="after">
+                    <field name="create_journal_entry" invisible="not available_in_attachments"/>
+                    <field name="attachment_journal_id" options="{'no_create': True, 'no_create_edit':True}"
+                           invisible="not create_journal_entry" required="create_journal_entry"/>
+                    <field name="debit_account_id" options="{'no_create': True, 'no_create_edit':True}"
+                           invisible="not create_journal_entry" required="create_journal_entry"/>
+                    <field name="credit_account_id" options="{'no_create': True, 'no_create_edit':True}"
+                           invisible="not create_journal_entry" required="create_journal_entry"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
